@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1520912D67A20000DE3EF8 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1520902D67A20000DE3EF8 /* Result.swift */; };
 		A8A530A52D5A775A008F327F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8A5309C2D5A775A008F327F /* Assets.xcassets */; };
 		A8A530A72D5A775A008F327F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A5309F2D5A775A008F327F /* LaunchScreen.storyboard */; };
 		A8A530A82D5A775A008F327F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A530A12D5A775A008F327F /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E1520902D67A20000DE3EF8 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A8A530832D5A7747008F327F /* PersonalQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A5309B2D5A775A008F327F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8A5309C2D5A775A008F327F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				A8A530B22D5A81CA008F327F /* Question.swift */,
+				0E1520902D67A20000DE3EF8 /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				A8A530B32D5A81CA008F327F /* Question.swift in Sources */,
 				A8A530A92D5A775A008F327F /* AppDelegate.swift in Sources */,
 				A8A530AA2D5A775A008F327F /* SceneDelegate.swift in Sources */,
+				0E1520912D67A20000DE3EF8 /* Result.swift in Sources */,
 				A8A530AB2D5A775A008F327F /* QuestionsViewController.swift in Sources */,
 				A8A530B12D5A7BA4008F327F /* ResultViewController.swift in Sources */,
 			);

@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  PersonalQuiz
 //
-//  Created by Ast on 11.02.2025.
+//  Created by Ast on 13.02.2025.
 //
 
 import UIKit

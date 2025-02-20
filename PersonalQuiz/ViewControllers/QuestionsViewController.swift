@@ -2,7 +2,7 @@
 //  QuestionsViewController.swift
 //  PersonalQuiz
 //
-//  Created by Ast on 11.02.2025.
+//  Created by Ast on 13.02.2025.
 //
 
 import UIKit
@@ -32,8 +32,9 @@ final class QuestionsViewController: UIViewController {
         questions[questionIndex].answers
     }
     
-    // MARK: - View Life Cycle
+    // MARK: - View life cycle
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         let answerCount = Float(currentAnswers.count - 1)
         rangedSlider.maximumValue = answerCount
@@ -47,15 +48,19 @@ final class QuestionsViewController: UIViewController {
     
     // MARK: - IB Actions
     @IBAction private func singleAnswerButtonTapped(_ sender: UIButton) {
+        
         guard let buttonIndex = singleButtons.firstIndex(of: sender) else { return }
         let currentAnswer = currentAnswers[buttonIndex]
+        // Save single answers
         selectedAnswers.append(currentAnswer)
         nextQuestion()
     }
     
     @IBAction private func multipleButtonAnswerTapped() {
+        
         for (multipleSwitch, answer) in zip(multipleSwitches, currentAnswers) {
             if multipleSwitch.isOn {
+                // Save muliptle answers
                 selectedAnswers.append(answer)
             }
         }
@@ -64,8 +69,65 @@ final class QuestionsViewController: UIViewController {
     }
     
     @IBAction private func rangedAnswerButtonTapped() {
+        
         let index = lrintf(rangedSlider.value)
+        // Save ranged answers
         selectedAnswers.append(currentAnswers[index])
+
+        
+//        func isAnimal(answer: Answer) -> Bool {
+//            print("Animal \(answer.animal)")
+//            return answer.animal == .some(answer.animal )
+//        }
+//        
+//        isAnimal(answer: selectedAnswers.last!)
+
+        
+        
+//        var new: [String] = []
+//        
+//        for count in selectedAnswers {
+//            new.append(String(describing: count.animal))
+//        }
+//        
+//        let rabbit = new.filter { $0 == "rabbit" }
+//        let dog = new.filter { $0 == "dog" }
+//        let cat = new.filter { $0 == "cat" }
+//        let turtle = new.filter { $0 == "turtle" }
+//        
+//        var char: Character
+//
+//        if rabbit.count >= dog.count && rabbit.count >= cat.count && rabbit.count >= turtle.count {
+//            char = Animal.rabbit.rawValue
+//            print("rabbit \(char)")
+//        }
+//        
+//        if dog.count > rabbit.count && dog.count > cat.count && dog.count > turtle.count {
+//            char = Animal.dog.rawValue
+//            print("dog \(char)")
+//        }
+//        
+//        if cat.count >= rabbit.count && cat.count >= dog.count && cat.count >= turtle.count {
+//            char = Animal.cat.rawValue
+//            print("cat \(char)")
+//        }
+//        
+//        if turtle.count > rabbit.count && turtle.count > dog.count && turtle.count > cat.count {
+//            char = Animal.turtle.rawValue
+//            print("turtle \(char)")
+//        }
+//    
+//        print(new)
+//        new = []
+        
+        
+        
+        for animals in selectedAnswers.sorted(by: { $0.animal.rawValue < $1.animal.rawValue }) {
+
+            //resultLabel.text = "Вы - \(animals.animal.rawValue)!"
+            print(animals.animal.rawValue)
+        }
+        
         nextQuestion()
     }
 }
@@ -74,7 +136,7 @@ final class QuestionsViewController: UIViewController {
 private extension QuestionsViewController {
     // Update UI
     func updateUI() {
-        // Hide everything
+        // Hide all
         for stackView in [singleStackView, multipleStackView, rangedStackView] {
             stackView?.isHidden = true
         }
@@ -136,7 +198,7 @@ private extension QuestionsViewController {
             updateUI()
             return
         }
-        
+        // Переход по сигвэю программно
         performSegue(withIdentifier: "showResult", sender: nil)
     }
 }

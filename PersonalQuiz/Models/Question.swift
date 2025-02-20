@@ -2,7 +2,7 @@
 //  Question.swift
 //  PersonalQuiz
 //
-//  Created by Ast on 11.02.2025.
+//  Created by Ast on 13.02.2025.
 //
 
 struct Question {
@@ -34,8 +34,8 @@ struct Question {
         Question(
             title: "Любите ли вы поездки на машине?",
             answers: [
-                Answer(title: "Ненавижу", animal: .rabbit),
-                Answer(title: "Нервничаю", animal: .cat),
+                Answer(title: "Ненавижу", animal: .cat),
+                Answer(title: "Нервничаю", animal: .rabbit),
                 Answer(title: "Не замечаю", animal: .turtle),
                 Answer(title: "Обожаю", animal: .dog)
             ],
