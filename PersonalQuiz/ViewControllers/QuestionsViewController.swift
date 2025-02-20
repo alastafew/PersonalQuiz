@@ -73,64 +73,58 @@ final class QuestionsViewController: UIViewController {
         let index = lrintf(rangedSlider.value)
         // Save ranged answers
         selectedAnswers.append(currentAnswers[index])
+        
+        var chars: [Character] = []
+        
+        for animals in selectedAnswers.sorted(
+            by: {
+                $0.animal.rawValue < $1.animal.rawValue }) {
+            
+            chars.append(animals.animal.rawValue)
 
-        
-//        func isAnimal(answer: Answer) -> Bool {
-//            print("Animal \(answer.animal)")
-//            return answer.animal == .some(answer.animal )
-//        }
-//        
-//        isAnimal(answer: selectedAnswers.last!)
-
-        
-        
-//        var new: [String] = []
-//        
-//        for count in selectedAnswers {
-//            new.append(String(describing: count.animal))
-//        }
-//        
-//        let rabbit = new.filter { $0 == "rabbit" }
-//        let dog = new.filter { $0 == "dog" }
-//        let cat = new.filter { $0 == "cat" }
-//        let turtle = new.filter { $0 == "turtle" }
-//        
-//        var char: Character
-//
-//        if rabbit.count >= dog.count && rabbit.count >= cat.count && rabbit.count >= turtle.count {
-//            char = Animal.rabbit.rawValue
-//            print("rabbit \(char)")
-//        }
-//        
-//        if dog.count > rabbit.count && dog.count > cat.count && dog.count > turtle.count {
-//            char = Animal.dog.rawValue
-//            print("dog \(char)")
-//        }
-//        
-//        if cat.count >= rabbit.count && cat.count >= dog.count && cat.count >= turtle.count {
-//            char = Animal.cat.rawValue
-//            print("cat \(char)")
-//        }
-//        
-//        if turtle.count > rabbit.count && turtle.count > dog.count && turtle.count > cat.count {
-//            char = Animal.turtle.rawValue
-//            print("turtle \(char)")
-//        }
-//    
-//        print(new)
-//        new = []
-        
-        
-        
-        for animals in selectedAnswers.sorted(by: { $0.animal.rawValue < $1.animal.rawValue }) {
-
-            //resultLabel.text = "Вы - \(animals.animal.rawValue)!"
-            print(animals.animal.rawValue)
+            var dogCount = 0
+            var catCount = 0
+            var rabbitCount = 0
+            var turtleCount = 0
+            
+            print(chars.count)
+            
+            for itarations in 0..<chars.count {
+                if chars[itarations] == Animal.dog.rawValue {
+                    dogCount += 1
+                } else if chars[itarations] == Animal.cat.rawValue {
+                    catCount += 1
+                } else if chars[itarations] == Animal.rabbit.rawValue {
+                    rabbitCount += 1
+                } else if chars[itarations] == Animal.turtle.rawValue {
+                    turtleCount += 1
+                }
+            }
+            
+            if dogCount > catCount &&
+                dogCount > rabbitCount &&
+                dogCount > turtleCount {
+                print("Dog \(dogCount) \(Animal.dog.definition)")
+            } else if catCount > dogCount &&
+                        catCount > rabbitCount &&
+                        catCount > turtleCount {
+                print("Cat \(catCount) \(Animal.cat.definition)")
+            } else if rabbitCount > dogCount &&
+                        rabbitCount > catCount &&
+                        rabbitCount > turtleCount {
+                print("Rabbit \(rabbitCount) \(Animal.rabbit.definition)")
+            } else  {
+                print("Turtle \(turtleCount) \(Animal.turtle.definition)")
+            }
         }
         
+        print(chars)
+        
         nextQuestion()
+        
     }
 }
+
 
 // MARK: - Private methods
 private extension QuestionsViewController {
