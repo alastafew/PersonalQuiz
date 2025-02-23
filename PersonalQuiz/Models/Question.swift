@@ -55,11 +55,13 @@ enum Category {
     case ranged
 }
 
+
 enum Animal: Character {
     case dog = "🐶"
     case cat = "😺"
     case rabbit = "🐰"
     case turtle = "🐢"
+    case ghost = "👻"
     
     var definition: String {
         switch self {
@@ -71,6 +73,11 @@ enum Animal: Character {
             "Вам нравится все мягкое. Вы здоровы и полны энергии."
         case .turtle:
             "Ваша сила - в мудрости. Медленный и вдумчивый выигрывает на больших дистанциях."
+        case .ghost:
+            "Вы животное-призрак. Это дефолтная ветка, попробуйте снова!"
         }
     }
 }
+
+var resultIcon: Character = " "
+var resultText = ""

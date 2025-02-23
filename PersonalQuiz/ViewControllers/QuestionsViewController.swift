@@ -74,52 +74,7 @@ final class QuestionsViewController: UIViewController {
         // Save ranged answers
         selectedAnswers.append(currentAnswers[index])
         
-        var chars: [Character] = []
-        
-        for animals in selectedAnswers.sorted(
-            by: {
-                $0.animal.rawValue < $1.animal.rawValue }) {
-            
-            chars.append(animals.animal.rawValue)
-
-            var dogCount = 0
-            var catCount = 0
-            var rabbitCount = 0
-            var turtleCount = 0
-            
-            print(chars.count)
-            
-            for itarations in 0..<chars.count {
-                if chars[itarations] == Animal.dog.rawValue {
-                    dogCount += 1
-                } else if chars[itarations] == Animal.cat.rawValue {
-                    catCount += 1
-                } else if chars[itarations] == Animal.rabbit.rawValue {
-                    rabbitCount += 1
-                } else if chars[itarations] == Animal.turtle.rawValue {
-                    turtleCount += 1
-                }
-            }
-            
-            if dogCount > catCount &&
-                dogCount > rabbitCount &&
-                dogCount > turtleCount {
-                print("Dog \(dogCount) \(Animal.dog.definition)")
-            } else if catCount > dogCount &&
-                        catCount > rabbitCount &&
-                        catCount > turtleCount {
-                print("Cat \(catCount) \(Animal.cat.definition)")
-            } else if rabbitCount > dogCount &&
-                        rabbitCount > catCount &&
-                        rabbitCount > turtleCount {
-                print("Rabbit \(rabbitCount) \(Animal.rabbit.definition)")
-            } else  {
-                print("Turtle \(turtleCount) \(Animal.turtle.definition)")
-            }
-        }
-        
-        print(chars)
-        
+        getResult()
         nextQuestion()
         
     }
@@ -152,6 +107,62 @@ private extension QuestionsViewController {
         
         showCurrentAnswers(for: currentQuestion.category)
         
+    }
+    func getResult() {
+        
+        var questionChars: [Character] = []
+        var dogCount = 0
+        var catCount = 0
+        var rabbitCount = 0
+        var turtleCount = 0
+        
+        for animals in selectedAnswers.sorted(
+            by: {
+                $0.animal.rawValue < $1.animal.rawValue }) {
+            
+            questionChars.append(animals.animal.rawValue)
+            
+            for itarations in 0..<questionChars.count {
+                if questionChars[itarations] == Animal.dog.rawValue {
+                    dogCount += 1
+                } else if questionChars[itarations] == Animal.cat.rawValue {
+                    catCount += 1
+                } else if questionChars[itarations] == Animal.rabbit.rawValue {
+                    rabbitCount += 1
+                } else if questionChars[itarations] == Animal.turtle.rawValue {
+                    turtleCount += 1
+                }
+            }
+            
+            if dogCount > catCount &&
+                dogCount > rabbitCount &&
+                dogCount > turtleCount {
+                resultIcon = Animal.dog.rawValue
+                resultText = Animal.dog.definition
+                dogCount = 0
+            } else if catCount > dogCount &&
+                        catCount > rabbitCount &&
+                        catCount > turtleCount {
+                resultIcon = Animal.cat.rawValue
+                resultText = Animal.cat.definition
+                catCount = 0
+            } else if rabbitCount > dogCount &&
+                        rabbitCount > catCount &&
+                        rabbitCount > turtleCount {
+                resultIcon = Animal.rabbit.rawValue
+                resultText = Animal.rabbit.definition
+                rabbitCount = 0
+            } else if turtleCount > dogCount &&
+                        turtleCount > catCount &&
+                        turtleCount > rabbitCount {
+                resultIcon = Animal.turtle.rawValue
+                resultText = Animal.turtle.definition
+                turtleCount = 0
+            } else {
+                resultIcon = Animal.ghost.rawValue
+                resultText = Animal.ghost.definition
+            }
+        }
     }
     
     func showCurrentAnswers(for category: Category) {
