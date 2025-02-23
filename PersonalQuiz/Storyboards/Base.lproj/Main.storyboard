@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -56,14 +55,13 @@
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="UIH-uP-dLV" kind="presentation" modalPresentationStyle="fullScreen" id="gOg-oy-KJe"/>
+                                            <segue destination="UIH-uP-dLV" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="gOg-oy-KJe"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AFU-vl-jCg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DCr-iL-mgA" secondAttribute="trailing" constant="212" id="7A4-un-yM3"/>
                             <constraint firstItem="fFm-vX-YoE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C4w-h5-fMU"/>
@@ -141,7 +139,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-EJ-dqr">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-EJ-dqr">
                                                 <rect key="frame" x="239" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
@@ -155,7 +153,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1tV-hJ-2yX">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1tV-hJ-2yX">
                                                 <rect key="frame" x="239" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
@@ -169,7 +167,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="213-Ff-LgA">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="213-Ff-LgA">
                                                 <rect key="frame" x="239" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
@@ -183,7 +181,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="llg-xx-faU">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="llg-xx-faU">
                                                 <rect key="frame" x="239" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
@@ -246,7 +244,6 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BOZ-aF-bCy"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VPq-Yj-gDo" firstAttribute="top" secondItem="rz3-2L-rMg" secondAttribute="bottom" constant="8" id="2q9-dA-DN5"/>
                             <constraint firstItem="rz3-2L-rMg" firstAttribute="leading" secondItem="BOZ-aF-bCy" secondAttribute="leading" id="IEx-o5-Ate"/>
@@ -286,7 +283,7 @@
                         <outletCollection property="multipleLabels" destination="KH1-eC-iCr" collectionClass="NSMutableArray" id="cM8-12-aGL"/>
                         <outletCollection property="multipleLabels" destination="GBY-KI-bMF" collectionClass="NSMutableArray" id="9ma-14-d2M"/>
                         <outletCollection property="multipleLabels" destination="fHr-eZ-uTC" collectionClass="NSMutableArray" id="aB2-OS-8lh"/>
-                        <segue destination="kgh-T8-MXg" kind="show" identifier="showResult" id="VTS-SB-AwE"/>
+                        <segue destination="kgh-T8-MXg" kind="show" identifier="showResult" animates="NO" id="VTS-SB-AwE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSK-E3-XTR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -320,7 +317,6 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D3d-r6-7Ti"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="D3d-r6-7Ti" firstAttribute="trailing" secondItem="wkd-mI-hP8" secondAttribute="trailing" constant="16" id="GVq-BU-pef"/>
                             <constraint firstItem="wkd-mI-hP8" firstAttribute="centerY" secondItem="wFe-dT-igf" secondAttribute="centerY" id="WlN-K9-Sw6"/>
@@ -362,9 +358,4 @@
             <point key="canvasLocation" x="832.5" y="2.112676056338028"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
