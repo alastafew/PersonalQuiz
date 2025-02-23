@@ -323,7 +323,7 @@
                             <constraint firstItem="wkd-mI-hP8" firstAttribute="leading" secondItem="D3d-r6-7Ti" secondAttribute="leading" constant="16" id="u41-6N-LSL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Результат" style="editor" id="SKb-Lv-k3u">
+                    <navigationItem key="navigationItem" title="Результат" id="SKb-Lv-k3u">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="cz9-qO-apY">
                             <connections>
                                 <action selector="doneButtonTapped:" destination="kgh-T8-MXg" id="bvf-Li-tQo"/>
