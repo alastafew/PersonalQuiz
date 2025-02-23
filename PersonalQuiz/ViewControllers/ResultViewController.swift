@@ -13,6 +13,7 @@ final class ResultViewController: UIViewController {
     @IBOutlet var textLabel: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
         resultLabel.text = "Вы - \(resultIcon)!"
@@ -21,6 +22,7 @@ final class ResultViewController: UIViewController {
     }
     
     @IBAction private func doneButtonTapped(_ sender: UIBarButtonItem) {
+        
         dismiss(animated: true)
     }    
 }
